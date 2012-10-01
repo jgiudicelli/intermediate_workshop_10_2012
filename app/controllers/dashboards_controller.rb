@@ -5,5 +5,6 @@ class DashboardsController < ApplicationController
     @shouts = current_user.shouts.latest
     @text_shout = TextShout.new
     @photo_shout = PhotoShout.new
+    @video_shout = VideoShout.new
   end
 end

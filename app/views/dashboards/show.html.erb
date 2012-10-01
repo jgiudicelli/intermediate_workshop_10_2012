@@ -9,12 +9,12 @@
 
 <%= form_for @photo_shout do |form| %>
   <%= form.file_field :image %>
-  <%= form.submit "Shout" %>
+  <%= form.submit "Shout Photo" %>
 <% end %>
 
-<% @shouts.each do |shout| %>
-  <div>
-    <%= render shout.content %>
-    - <%= time_ago_in_words(shout.created_at) %> ago
-  </div>
+<%= form_for @video_shout do |form| %>
+  <%= form.url_field :url, placeholder: "Video url" %>
+  <%= form.submit "Shout Video" %>
 <% end %>
+
+<%= render @shouts %>
