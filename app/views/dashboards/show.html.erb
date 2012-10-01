@@ -13,5 +13,8 @@
 <% end %>
 
 <% @shouts.each do |shout| %>
-  <div><%= shout.content.body %> - <%= time_ago_in_words(shout.created_at) %> ago</div>
+  <div>
+    <%= render shout.content %>
+    - <%= time_ago_in_words(shout.created_at) %> ago
+  </div>
 <% end %>
