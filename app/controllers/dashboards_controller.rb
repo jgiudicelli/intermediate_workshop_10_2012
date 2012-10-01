@@ -3,6 +3,6 @@ class DashboardsController < ApplicationController
 
   def show
     @shouts = current_user.shouts.latest
-    @shout = Shout.new
+    @text_shout = TextShout.new
   end
 end

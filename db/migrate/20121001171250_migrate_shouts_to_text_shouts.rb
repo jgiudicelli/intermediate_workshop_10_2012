@@ -23,7 +23,6 @@ class MigrateShoutsToTextShouts < ActiveRecord::Migration
   def down
     add_column :shouts, :body, :string
 
-    # some stuff
     select_all("SELECT id, content_id FROM shouts").each do |shout|
       content = select_one(<<-SQL)
         SELECT body

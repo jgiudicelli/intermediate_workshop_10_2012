@@ -2,11 +2,11 @@
   <h1>Dashboard</h1>
 </header>
 
-<%= form_for @shout do |form| %>
+<%= form_for @text_shout do |form| %>
   <%= form.text_field :body, placeholder: "Shout text" %>
   <%= form.submit "Shout" %>
 <% end %>
 
 <% @shouts.each do |shout| %>
-  <div><%= shout.body %> - <%= time_ago_in_words(shout.created_at) %> ago</div>
+  <div><%= shout.content.body %> - <%= time_ago_in_words(shout.created_at) %> ago</div>
 <% end %>

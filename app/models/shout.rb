@@ -1,6 +1,7 @@
 class Shout < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :body
+  belongs_to :content, polymorphic: true
+  attr_accessible :body, :content
 
   def self.latest
     order("created_at DESC")
