@@ -15,6 +15,12 @@ class User < ActiveRecord::Base
     self_and_followed_user_ids.exclude?(user.id)
   end
 
+  def followed_by? user
+    if user
+      follower_ids.include?(user.id)
+    end
+  end
+
   def feed
     ShoutFeed.new(self_and_followed_user_ids)
   end

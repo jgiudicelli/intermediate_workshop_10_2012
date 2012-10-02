@@ -19,6 +19,11 @@
     <%= link_to "Sign up", sign_up_path %>
   <% end %>
 
+  <%= form_for(:search, url: search_path, method: :get) do |form| %>
+    <%= form.search_field :q, placeholder: "Search for" %>
+    <%= form.submit "Search" %>
+  <% end %>
+
 <%= yield %>
 
 </body>

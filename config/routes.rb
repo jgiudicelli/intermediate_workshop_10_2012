@@ -7,4 +7,6 @@ Shouter::Application.routes.draw do
   resources :users, only: [:show] do
     post "follow" => "following_relationships#create"
   end
+
+  get "search" => "shout_searches#show"
 end

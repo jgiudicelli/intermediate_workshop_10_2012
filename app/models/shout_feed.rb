@@ -8,4 +8,5 @@ class ShoutFeed
   def shouts
     Shout.where(user_id: @user_ids).includes(:user, :content).latest
   end
+
 end

@@ -9,6 +9,9 @@
 
 <%= form_for @text_shout do |form| %>
   <%= form.text_field :body, placeholder: "Shout text" %>
+  <label for="private">
+    <%= check_box_tag 'shout[private]', true, false, id: "private" %> private
+  </label>
   <%= form.submit "Shout" %>
 <% end %>
 
