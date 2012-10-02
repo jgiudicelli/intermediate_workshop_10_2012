@@ -1,5 +1,10 @@
 <header>
   <h1>Dashboard</h1>
+  <div>
+    <%= current_user.followers.count %> Followers
+    <br />
+    <%= current_user.followed_users.count %> Followed users
+  </div>
 </header>
 
 <%= form_for @text_shout do |form| %>
