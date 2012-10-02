@@ -16,7 +16,11 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    Shout.where(user_id: self_and_followed_user_ids).includes(:user, :content)
+    ShoutFeed.new(self_and_followed_user_ids)
+  end
+
+  def public_feed
+    ShoutFeed.new(id)
   end
 
   private
