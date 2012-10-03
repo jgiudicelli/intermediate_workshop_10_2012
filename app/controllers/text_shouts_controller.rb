@@ -7,7 +7,7 @@ class TextShoutsController < ApplicationController
 
   private
 
-  def shouts_params
+  def shout_params
     params[:shout] || {}
   end
 end
